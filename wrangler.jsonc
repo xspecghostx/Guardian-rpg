@@ -1,0 +1,32 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "guardian-rpg",
+  "main": "index.js",
+  "compatibility_date": "2026-09-25",
+  "placement": {
+    "region": "aws:ap-southeast-2"
+  },
+  "vars": {
+    "SUPABASE_URL": "https://qvlacvadzogeosfqxwfo.supabase.co",
+    "SUPABASE_PUBLISHABLE_KEY": "sb_publishable_DssON5zOb18xnIsKZm62_Q_7UJCtH2l",
+    "DEFAULT_CAMPAIGN_SLUG": "grimdark_riven_dask_420342",
+    "CACHE_TTL_MS": "5000"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "CAMPAIGN_RUNTIME",
+        "class_name": "CampaignRuntime"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["CampaignRuntime"]
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
